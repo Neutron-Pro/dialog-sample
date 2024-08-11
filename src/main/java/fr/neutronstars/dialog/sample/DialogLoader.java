@@ -6,10 +6,12 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DialogLoader {
-    public DialogManager load(String data) {
-        final DialogManager dialogManager = new DialogManager();
+    public Dialog load(String data) {
+        final Map<Integer, Dialog> dialogMap = new HashMap<>();
 
         try (final InputStream inputStream = DialogLoader.class.getResourceAsStream(data)){
 
@@ -21,7 +23,8 @@ public class DialogLoader {
 
             for (int i = 0; i < array.length(); i++) {
                 final JSONObject object = array.getJSONObject(i);
-                dialogManager.register(new Dialog(object.getInt("id"), object.getString("message")));
+                final Dialog dialog = new Dialog(object.getInt("id"), object.getString("message"));
+                dialogMap.put(dialog.getIdentifier(), dialog);
             }
 
             for (int x = 0; x < array.length(); x++) {
@@ -30,13 +33,13 @@ public class DialogLoader {
                     continue;
                 }
                 final JSONArray suggestions = object.getJSONArray("suggestions");
-                final Dialog dialog = dialogManager.get(object.getInt("id"));
+                final Dialog dialog = dialogMap.get(object.getInt("id"));
 
                 for (int y = 0; y < suggestions.length(); y++) {
                     final JSONObject suggestion = suggestions.getJSONObject(y);
                     dialog.add(new Suggestion(
                         suggestion.getString("text"),
-                        dialogManager.get(suggestion.getInt("dialog"))
+                        dialogMap.get(suggestion.getInt("dialog"))
                     ));
                 }
             }
@@ -44,6 +47,6 @@ public class DialogLoader {
             exception.printStackTrace();
         }
 
-        return dialogManager;
+        return dialogMap.get(0);
     }
 }

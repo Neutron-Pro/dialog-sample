@@ -6,9 +6,8 @@ import java.util.Scanner;
 public class DialogApplication {
     public static void main(String... args) {
         final Scanner scanner = new Scanner(System.in);
-        final DialogManager dialogManager = new DialogLoader().load("/dialog.json");
 
-        Dialog dialog = dialogManager.get(0);
+        Dialog dialog = new DialogLoader().load("/dialog.json");
 
         if (dialog == null) {
             System.err.println("Dialog not found with id: 0");
