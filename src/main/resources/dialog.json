@@ -1,0 +1,114 @@
+[
+  {
+    "id": 0,
+    "message": "Bonjour, je vais vous poser une série de calcule. Si vous échouez, vous reprendrez dès le début ! Etes-vous prêt ?",
+    "suggestions": [
+      {
+        "text": "Oui",
+        "dialog": 3
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "message": "Oups, c'est perdu! Vous allez devoir recommencer!",
+    "suggestions": [
+      {
+        "text": "Continuer",
+        "dialog": 3
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "message": "Félicitation ! Vous avez gagné."
+  },
+  {
+    "id": 3,
+    "message": "Combien font 1 + 1 ?",
+    "suggestions": [
+      {
+        "text": "0",
+        "dialog": 1
+      },
+      {
+        "text": "1",
+        "dialog": 1
+      },
+      {
+        "text": "2",
+        "dialog": 4
+      },
+      {
+        "text": "3",
+        "dialog": 1
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "message": "Combien font 1 * 1 ?",
+    "suggestions": [
+      {
+        "text": "0",
+        "dialog": 1
+      },
+      {
+        "text": "1",
+        "dialog": 5
+      },
+      {
+        "text": "2",
+        "dialog": 1
+      },
+      {
+        "text": "3",
+        "dialog": 1
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "message": "Combien font 1 / 1 ?",
+    "suggestions": [
+      {
+        "text": "0",
+        "dialog": 1
+      },
+      {
+        "text": "1",
+        "dialog": 6
+      },
+      {
+        "text": "2",
+        "dialog": 1
+      },
+      {
+        "text": "3",
+        "dialog": 1
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "message": "Combien font 1 - 1 ?",
+    "suggestions": [
+      {
+        "text": "0",
+        "dialog": 2
+      },
+      {
+        "text": "1",
+        "dialog": 1
+      },
+      {
+        "text": "2",
+        "dialog": 1
+      },
+      {
+        "text": "3",
+        "dialog": 1
+      }
+    ]
+  }
+]
